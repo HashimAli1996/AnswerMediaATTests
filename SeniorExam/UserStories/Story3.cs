@@ -34,7 +34,7 @@ namespace SeniorExam
             //Assert.IsTrue(summerDresses.AreProdsBetween16and20());
         }
 
-        //[OneTimeTearDown]
+        [OneTimeTearDown]
         public void TearDown()
         {
             Thread.Sleep(3000);

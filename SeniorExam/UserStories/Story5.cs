@@ -40,7 +40,7 @@ namespace SeniorExam
             Assert.IsTrue(ourStores.IsScreenShotCorrectAndSaved());
         }
 
-        //[OneTimeTearDown]
+        [OneTimeTearDown]
         public void TearDown()
         {
             Thread.Sleep(3000);

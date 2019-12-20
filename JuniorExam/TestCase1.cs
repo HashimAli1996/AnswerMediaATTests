@@ -19,7 +19,7 @@ namespace JuniorExam
         string wrongUN = "wrong";
         string username = "tomsmith";
         string password = "SuperSecretPassword!";
-        //private static IWebElement username1 = driver.FindElement(By.Id("username"));
+        
 
         [OneTimeSetUp]
         public void SetUp()
@@ -62,7 +62,7 @@ namespace JuniorExam
         }
 
         [Test]
-        [Ignore("")]
+        //[Ignore("")]
         public void TestCase1Scenario2()
         {
             string currUrl = driver.Url;
@@ -90,7 +90,7 @@ namespace JuniorExam
         }
 
         [Test]
-        [Ignore("")]
+        //[Ignore("")]
         public void TestCase1Scenario3()
         {
             string currUrl = driver.Url;

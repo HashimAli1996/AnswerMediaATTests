@@ -28,6 +28,9 @@ namespace SeniorExam.PageObjects
         [FindsBy(How = How.XPath, Using = "//div[@id='center_column']/p[@class='info-account']")]
         private IWebElement myAccountWelcomeInfo;
 
+        [FindsBy(How = How.XPath, Using = "//a[@class='logout']")]
+        private IWebElement signOutBtn;
+
         public Boolean IsNamePresent()
         {
             Boolean flag = false;
@@ -50,6 +53,11 @@ namespace SeniorExam.PageObjects
             }
 
             return flag;
+        }
+
+        public void signOut()
+        {
+            signOutBtn.Click();
         }
     }
 }

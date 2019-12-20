@@ -8,6 +8,7 @@ using OpenQA.Selenium.Support.UI;
 using SeniorExam.BaseClass;
 using SeniorExam.PageObjects;
 using System.Threading;
+using System;
 
 namespace SeniorExam
 {
@@ -23,6 +24,14 @@ namespace SeniorExam
         [Test]
         public void US4ScenarioWrongInfo()
         {
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            string currUrl = driver.Url;
+            if (currUrl != "http://automationpractice.com/index.php")
+            {
+                driver.Navigate().GoToUrl("http://automationpractice.com/index.php");
+                wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//a[@class='login']")));
+            }
+
             var index = new IndexPage(driver);
             var signIn = new SignInPage(driver);
             var register = new RegistrationFormPage(driver);
@@ -63,6 +72,8 @@ namespace SeniorExam
 
             //assert my account page and name on top right corner
             Assert.IsTrue(myAccount.IsNamePresent());
+
+            myAccount.signOut();
         }
 
         [OneTimeTearDown]

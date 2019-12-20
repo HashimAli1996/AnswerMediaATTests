@@ -38,7 +38,7 @@ namespace SeniorExam
             
         }
 
-        //[OneTimeTearDown]
+        [OneTimeTearDown]
         public void TearDown()
         {
             Thread.Sleep(3000);
